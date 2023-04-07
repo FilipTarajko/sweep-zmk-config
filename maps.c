@@ -62,3 +62,9 @@ anki_layer
 // |         |    1    |    2    |  SPACE  |    4    |        |    4    |  SPACE   |    2   |    1    |         |
 // |         |         |    B    |    S    |  K_UNDO |        | K_UNDO  |    S     |    B   |         |         |
 //                               |  SPACE  |         |        |         |  SPACE   |
+
+carpalx_6_optimization
+// |    Q    |    W    |    K    |    R    |    F    |        |    Y    |    U    |    L    |    J    |    P    |
+// |    D    |    S    |    A    |    T    |    N    |        |    H    |    O    |    E    |    I    |    ;    |
+// |    Z    |    X    |    C    |    V    |    B    |        |    G    |    M    |    ,    |    .    |    /    |
+//                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |

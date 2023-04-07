@@ -24,6 +24,7 @@
 #define CTR 5
 #define FUN 6
 #define ANKI 7
+#define OPT6 8
 
 // Combo timeout
 #define COMBO_TIMEOUT 40
@@ -37,6 +38,7 @@
 #define COMBO_BT_CLR 0 10 20 9 19 29
 #define COMBO_BT_PRV 0 10 20 15
 #define COMBO_BT_NXT 0 10 20 18
+#define COMBO_OPT6 20 21 22 23
 
 // Thumb keys
 #define LEFT_THUMB_KEYS 30 31
@@ -136,6 +138,12 @@
             key-positions = <COMBO_BT_NXT>;
             bindings = <&bt BT_NXT>;
         };
+
+        combo_opt6{
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_OPT6>;
+            bindings = <&tog OPT6>;
+        }
     };
 
     keymap {
@@ -270,4 +278,19 @@
             >;
         };
 	};
+
+    // carpalx 6-optimization: K/E, J/O, F/T, D/A, G/N, L/I
+        // |    Q    |    W    |    K    |    R    |    F    |        |    Y    |    U    |    L    |    J    |    P    |
+        // |    D    |    S    |    A    |    T    |    N    |        |    H    |    O    |    E    |    I    |    ;    |
+        // |    Z    |    X    |    C    |    V    |    B    |        |    G    |    M    |    ,    |    .    |    /    |
+        //                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |
+
+        default_layer {
+            bindings = <
+            &kp Q       &kp W       &kp K           &kp R           &kp F              &kp Y       &kp U           &kp L           &kp J             &kp P
+            &lhm LGUI D &lhm RALT S &lhm LCTRL A    &lhm LSHIFT T   &kp N              &kp H       &rhm RSHIFT O   &rhm RCTRL E    &rhm RALT I       &rhm RGUI SEMI
+            &kp Z       &lhm LALT X &kp C           &kp V           &kp B              &kp G       &kp M           &kp COMMA       &rhm LALT DOT     &kp SLASH
+                                                    &mo SYM         &kp SPC            &kp ENTER   &mo NUM
+            >;
+        };
 };
