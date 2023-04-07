@@ -277,7 +277,6 @@
                                             &kp SPC    &none              &none         &kp SPC
             >;
         };
-	};
 
     // carpalx 6-optimization: K/E, J/O, F/T, D/A, G/N, L/I
         // |    Q    |    W    |    K    |    R    |    F    |        |    Y    |    U    |    L    |    J    |    P    |
@@ -293,4 +292,5 @@
                                                     &mo SYM         &kp SPC            &kp ENTER   &mo NUM
             >;
         };
+	};
 };
