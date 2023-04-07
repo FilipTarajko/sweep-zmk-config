@@ -284,7 +284,7 @@
         // |    Z    |    X    |    C    |    V    |    B    |        |    G    |    M    |    ,    |    .    |    /    |
         //                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |
 
-        default_layer {
+        opt6_layer {
             bindings = <
             &kp Q       &kp W       &kp K           &kp R           &kp F              &kp Y       &kp U           &kp L           &kp J             &kp P
             &lhm LGUI D &lhm RALT S &lhm LCTRL A    &lhm LSHIFT T   &kp N              &kp H       &rhm RSHIFT O   &rhm RCTRL E    &rhm RALT I       &rhm RGUI SEMI
