@@ -143,17 +143,17 @@
         compatible = "zmk,keymap";
             
 
-    // carpalx 6-optimization: K/E, J/O, F/T, D/A, G/N, L/I
-        // |    Q    |    W    |    K    |    R    |    F    |        |    Y    |    U    |    L    |    J    |    P    |
-        // |    D    |    S    |    A    |    T    |    N    |        |    H    |    O    |    E    |    I    |    ;    |
-        // |    Z    |    X    |    C    |    V    |    B    |        |    G    |    M    |    ,    |    .    |    /    |
+    // carpalx full optimization - QGMLWY
+        // |    Q    |    G    |    M    |    L    |    W    |        |    Y    |    F    |    U    |    B    |    ;    |
+        // |    D    |    S    |    T    |    N    |    R    |        |    I    |    A    |    E    |    O    |    H    |
+        // |    Z    |    X    |    C    |    V    |    J    |        |    K    |    P    |    ,    |    .    |    /    |
         //                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |
 
         opt6_layer {
             bindings = <
-            &kp Q       &kp W       &kp K           &kp R           &kp F              &kp Y       &kp U           &kp L           &kp J             &kp P
-            &lhm LGUI D &lhm RALT S &lhm LCTRL A    &lhm LSHIFT T   &kp N              &kp H       &rhm RSHIFT O   &rhm RCTRL E    &rhm RALT I       &rhm RGUI SEMI
-            &kp Z       &lhm LALT X &kp C           &kp V           &kp B              &kp G       &kp M           &kp COMMA       &rhm LALT DOT     &kp SLASH
+            &kp Q       &kp G       &kp M           &kp L           &kp W              &kp Y       &kp F           &kp U           &kp B             &kp SEMI
+            &lhm LGUI D &lhm RALT S &lhm LCTRL T    &lhm LSHIFT N   &kp R              &kp I       &rhm RSHIFT A   &rhm RCTRL E    &rhm RALT O       &rhm RGUI H
+            &kp Z       &lhm LALT X &kp C           &kp V           &kp J              &kp K       &kp P           &kp COMMA       &rhm LALT DOT     &kp SLASH
                                                     &mo SYM         &kp SPC            &kp ENTER   &mo NUM
             >;
         };
