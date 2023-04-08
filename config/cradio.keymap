@@ -143,17 +143,17 @@
         compatible = "zmk,keymap";
             
 
-    // carpalx full optimization - QGMLWY
-        // |    Q    |    G    |    M    |    L    |    W    |        |    Y    |    F    |    U    |    B    |    ;    |
-        // |    D    |    S    |    T    |    N    |    R    |        |    I    |    A    |    E    |    O    |    H    |
-        // |    Z    |    X    |    C    |    V    |    J    |        |    K    |    P    |    ,    |    .    |    /    |
+    // colemakDH (default layer)
+        // |    Q    |    W    |    F    |    P    |    B    |        |    J    |    L    |    U    |    Y    |    ;    |
+        // |    A    |    R    |    S    |    T    |    G    |        |    M    |    N    |    E    |    I    |    O    |
+        // |    Z    |    X    |    C    |    D    |    V    |        |    K    |    H    |    ,    |    .    |    /    |
         //                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |
 
         opt6_layer {
             bindings = <
-            &kp Q       &kp G       &kp M           &kp L           &kp W              &kp Y       &kp F           &kp U           &kp B             &kp SEMI
-            &lhm LGUI D &lhm RALT S &lhm LCTRL T    &lhm LSHIFT N   &kp R              &kp I       &rhm RSHIFT A   &rhm RCTRL E    &rhm RALT O       &rhm RGUI H
-            &kp Z       &lhm LALT X &kp C           &kp V           &kp J              &kp K       &kp P           &kp COMMA       &rhm LALT DOT     &kp SLASH
+            &kp Q       &kp W       &kp F           &kp P           &kp B              &kp J       &kp L           &kp U           &kp Y             &kp SEMI
+            &lhm LGUI A &lhm RALT R &lhm LCTRL S    &lhm LSHIFT T   &kp G              &kp M       &rhm RSHIFT N   &rhm RCTRL E    &rhm RALT I       &rhm RGUI O
+            &kp Z       &lhm LALT X &kp C           &kp D           &kp V              &kp K       &kp H           &kp COMMA       &rhm LALT DOT     &kp SLASH
                                                     &mo SYM         &kp SPC            &kp ENTER   &mo NUM
             >;
         };

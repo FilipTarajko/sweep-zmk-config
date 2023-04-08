@@ -14,10 +14,10 @@ COMBO KEYS
 #define COMBO_BT_PRV 0 10 20 15
 #define COMBO_BT_NXT 0 10 20 18
 
-carpalx full optimization - QGMLWY
-// |    Q    |    G    |    M    |    L    |    W    |        |    Y    |    F    |    U    |    B    |    ;    |
-// |    D    |    S    |    T    |    N    |    R    |        |    I    |    A    |    E    |    O    |    H    |
-// |    Z    |    X    |    C    |    V    |    J    |        |    K    |    P    |    ,    |    .    |    /    |
+colemakDH
+// |    Q    |    W    |    F    |    P    |    B    |        |    J    |    L    |    U    |    Y    |    ;    |
+// |    A    |    R    |    S    |    T    |    G    |        |    M    |    N    |    E    |    I    |    O    |
+// |    Z    |    X    |    C    |    D    |    V    |        |    K    |    H    |    ,    |    .    |    /    |
 //                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |
 
 number_layer
