@@ -248,12 +248,12 @@
         combo_undo {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_UNDO>;
-            bindings = <macro_undo>;
+            bindings = <&macro_undo>;
         };
         combo_redo {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_REDO>;
-            bindings = <macro_redo>;
+            bindings = <&macro_redo>;
         };
 
         combo_mb1 {
