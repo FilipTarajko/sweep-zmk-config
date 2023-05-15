@@ -262,8 +262,8 @@
         };
         combo_u_ms_l {
             timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MS_U>;
-            bindings = <U_MS_U>;
+            key-positions = <COMBO_MS_L>;
+            bindings = <U_MS_L>;
         };
         combo_u_ms_r {
             timeout-ms = <COMBO_TIMEOUT>;
