@@ -155,6 +155,29 @@
         };
     };
 
+    macros {
+        macro_undo: macro_undo {
+            label = "macro_undo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        macro_redo: macro_redo {
+            label = "macro_redo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Y>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -206,7 +229,6 @@
             bindings = <&bt BT_NXT>;
         };
 
-
         combo_cut {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_CUT>;
@@ -226,12 +248,12 @@
         combo_undo {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_UNDO>;
-            bindings = <&kp K_UNDO>;
+            bindings = <macro_undo>;
         };
         combo_redo {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_REDO>;
-            bindings = <&kp K_REDO>;
+            bindings = <macro_redo>;
         };
 
         combo_mb1 {
