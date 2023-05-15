@@ -104,6 +104,8 @@
 #define COMBO_MS_R 26 29
 #define COMBO_WH_D 5 6
 #define COMBO_WH_U 8 9
+#define COMBO_WH_L 27 28
+#define COMBO_WH_R 28 29
 
 // Thumb keys
 #define LEFT_THUMB_KEYS 30 31
@@ -251,32 +253,42 @@
         combo_u_ms_u {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_U>;
-            bindings = <&kp U_MS_U>;
+            bindings = <U_MS_U>;
         };
         combo_u_ms_d {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_D>;
-            bindings = <&kp U_MS_D>;
+            bindings = <U_MS_D>;
         };
         combo_u_ms_l {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_U>;
-            bindings = <&kp U_MS_U>;
+            bindings = <U_MS_U>;
         };
         combo_u_ms_r {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_R>;
-            bindings = <&kp U_MS_R>;
+            bindings = <U_MS_R>;
         };
         combo_u_wh_u {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_WH_U>;
-            bindings = <&kp U_WH_U>;
+            bindings = <U_WH_U>;
         };
         combo_u_wh_d {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_WH_D>;
-            bindings = <&kp U_WH_D>;
+            bindings = <U_WH_D>;
+        };
+        combo_u_wh_l {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_WH_L>;
+            bindings = <U_WH_L>;
+        };
+        combo_u_wh_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_WH_R>;
+            bindings = <U_WH_R>;
         };
     };
 
