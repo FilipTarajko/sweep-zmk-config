@@ -259,58 +259,58 @@
         combo_mb1 {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MB1>;
-            bindings = <U_BTN1>;
+            bindings = <&mkp MB1>;
         };
         combo_mb2 {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MB2>;
-            bindings = <U_BTN2>;
+            bindings = <&mkp MB2>;
         };
         combo_mb3 {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MB3>;
-            bindings = <U_BTN3>;
+            bindings = <&mkp MB3>;
         };
 
         combo_u_ms_u {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_U>;
-            bindings = <U_MS_U>;
+            bindings = <&mmv MOVE_UP>;
         };
         combo_u_ms_d {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_D>;
-            bindings = <U_MS_D>;
+            bindings = <&mmv MOVE_DOWN>;
         };
         combo_u_ms_l {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_L>;
-            bindings = <U_MS_L>;
+            bindings = <&mmv MOVE_LEFT>;
         };
         combo_u_ms_r {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MS_R>;
-            bindings = <U_MS_R>;
+            bindings = <&mmv MOVE_RIGHT>;
         };
         combo_u_wh_u {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_WH_U>;
-            bindings = <U_WH_U>;
+            bindings = <&mwh SCROLL_UP>;
         };
         combo_u_wh_d {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_WH_D>;
-            bindings = <U_WH_D>;
+            bindings = <&mwh SCROLL_DOWN>;
         };
         combo_u_wh_l {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_WH_L>;
-            bindings = <U_WH_L>;
+            bindings = <&mwh SCROLL_LEFT>;
         };
         combo_u_wh_r {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_WH_R>;
-            bindings = <U_WH_R>;
+            bindings = <&mwh SCROLL_RIGHT>;
         };
     };
 
