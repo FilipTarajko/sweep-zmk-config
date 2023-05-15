@@ -244,7 +244,7 @@
             key-positions = <COMBO_MB2>;
             bindings = <U_BTN2>;
         };
-        combo_mb2 {
+        combo_mb3 {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MB3>;
             bindings = <U_BTN3>;
