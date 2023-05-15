@@ -171,7 +171,7 @@
         number_layer {
             bindings = <
             &trans      &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp SLASH          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &kp BSLH
-            &kp NUM_0   &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp EQUAL          &kp BSPC    &mo NUM_SYM &kp EQUAL   &kp DEL      &trans
+            &kp NUM_0   &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp EQUAL          &kp BSPC    &mo NUM_SYM &kp EQUAL   &kp DEL     &kp SEMI
             &trans      &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp MINUS          &trans      &kp UNDER   &kp COMMA   &kp DOT     &kp FSLH
                                                 &mo FUN     &trans             &trans      &trans
             >;
@@ -187,7 +187,7 @@
         number_symbol_layer {
             bindings = <
             &trans      &kp AMPS    &kp ASTRK   &kp LPAR    &kp QMARK          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &kp BSLH
-            &kp RPAR    &kp DOLLAR  &kp PERCENT &kp CARET   &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &trans
+            &kp RPAR    &kp DOLLAR  &kp PERCENT &kp CARET   &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &kp SEMI
             &trans      &kp EXCL    &kp AT      &kp HASH    &kp UNDER          &trans      &kp UNDER   &kp COMMA   &kp DOT     &kp FSLH
                                                 &mo FUN     &trans             &trans      &trans
             >;

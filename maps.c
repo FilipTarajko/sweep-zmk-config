@@ -10,9 +10,9 @@ COMBO KEYS
 #define COMBO_NAV 30 31
 #define COMBO_CTR 32 33
 #define COMBO_ANKI 26 27 28 29
-#define COMBO_BT_CLR 0 10 20 9 19 29
-#define COMBO_BT_PRV 0 10 20 15
-#define COMBO_BT_NXT 0 10 20 18
+#define COMBO_BT_CLR 0 4
+#define COMBO_BT_PRV 0 14
+#define COMBO_BT_NXT 0 24
 
 colemakDH
 // |    Q    |    W    |    F    |    P    |    B    |        |    J    |    L    |    U    |    Y    |    ;    |
