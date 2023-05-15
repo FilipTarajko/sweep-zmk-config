@@ -30,7 +30,7 @@
 #define COMBO_TIMEOUT 40
 
 // Combo keys
-#define COMBO_ESC 3 4
+#define COMBO_ESC 2 3
 #define COMBO_TAB 13 14
 #define COMBO_NAV 30 31
 #define COMBO_CTR 32 33
@@ -41,6 +41,11 @@
 #define COMBO_BT_CLR 0 4
 #define COMBO_BT_PRV 0 14
 #define COMBO_BT_NXT 0 24
+#define COMBO_CUT 21 23
+#define COMBO_COPY 21 22
+#define COMBO_PASTE 22 23
+#define COMBO_UNDO 1 2
+#define COMBO_REDO 1 3
 
 // Thumb keys
 #define LEFT_THUMB_KEYS 30 31
@@ -68,7 +73,7 @@
             label = "LEFT_HOMEROW_MODS";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <500>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <150>;
             global-quick-tap-ms = <125>;
             hold-trigger-key-positions = <RIGHT_SIDE_KEYS LEFT_THUMB_KEYS>;
@@ -81,7 +86,7 @@
             label = "RIGHT_HOMEROW_MODS";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <500>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <150>;
             global-quick-tap-ms = <125>;
             hold-trigger-key-positions = <LEFT_SIDE_KEYS RIGHT_THUMB_KEYS>;
@@ -139,6 +144,34 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_BT_NXT>;
             bindings = <&bt BT_NXT>;
+        };
+
+
+        combo_cut {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_CUT>;
+            bindings = <&kp K_CUT>;
+        };
+        combo_copy {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_COPY>;
+            bindings = <&kp K_COPY>;
+        };
+        combo_paste {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_PASTE>;
+            bindings = <&kp K_PASTE>;
+        };
+
+        combo_undo {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_UNDO>;
+            bindings = <&kp K_UNDO>;
+        };
+        combo_redo {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_REDO>;
+            bindings = <&kp K_REDO>;
         };
     };
 
