@@ -230,6 +230,17 @@
             key-positions = <COMBO_REDO>;
             bindings = <&kp K_REDO>;
         };
+
+        combo_mb1 {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MB1>;
+            bindings = <U_BTN1>;
+        };
+        combo_mb2 {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MB2>;
+            bindings = <U_BTN2>;
+        };
     };
 
     keymap {
