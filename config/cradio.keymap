@@ -470,10 +470,10 @@
 
         anki_layer {
             bindings = <
-            &tog ANKI &none      &kp T      &kp Y      &kp (K_REDO)       &kp (K_REDO)  &kp Y      &kp T      &none      &none
-            &none     &kp NUM_1  &kp NUM_2  &kp SPC    &kp NUM_4          &kp NUM_4     &kp SPC    &kp NUM_2  &kp NUM_1  &none
-            &none     &none      &kp B      &kp S      &kp (K_UNDO)       &kp (K_UNDO)  &kp S      &kp B      &none      &none
-                                            &kp SPC    &none              &none         &kp SPC
+            &trans     &kp Y      &trans     &kp T      &trans             &kp (K_REDO)  &kp T      &trans     &kp Y       &trans
+            &trans     &kp NUM_1  &kp NUM_2  &kp SPC    &kp NUM_4          &kp NUM_4     &kp SPC    &kp NUM_2  &kp NUM_1   &trans
+            &trans     &trans     &kp B      &kp S      &trans             &kp (K_UNDO)  &kp S      &kp B      &trans      &trans
+                                             &kp SPC    &kp SPC            &kp SPC       &kp SPC
             >;
         };
 	};
