@@ -156,6 +156,37 @@
     };
 
     macros {
+        macro_copy: macro_copy {
+            label = "macro_copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        macro_paste: macro_paste {
+            label = "macro_paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        macro_cut: macro_cut {
+            label = "macro_cut";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
         macro_undo: macro_undo {
             label = "macro_undo";
             compatible = "zmk,behavior-macro";
@@ -232,17 +263,17 @@
         combo_cut {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_CUT>;
-            bindings = <&kp K_CUT>;
+            bindings = <&macro_cut>;
         };
         combo_copy {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_COPY>;
-            bindings = <&kp K_COPY>;
+            bindings = <&macro_copy>;
         };
         combo_paste {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_PASTE>;
-            bindings = <&kp K_PASTE>;
+            bindings = <&macro_paste>;
         };
 
         combo_undo {
@@ -326,7 +357,7 @@
 
         opt6_layer {
             bindings = <
-            &kp Q       &mmv MOVE_UP           &mmv MOVE_DOWN   &mmv SCROLL_UP           &mmv SCROLL_DOWN              &kp J       &kp L           &kp U           &kp Y             &kp SEMI
+            &kp Q       &kp W       &kp F1          &kp P           &kp B              &kp J       &kp L           &kp U           &kp Y             &kp SEMI
             &lhm LGUI A &lhm RALT R &lhm LCTRL S    &lhm LSHIFT T   &kp G              &kp M       &rhm RSHIFT N   &rhm RCTRL E    &rhm RALT I       &rhm RGUI O
             &kp Z       &lhm LALT X &kp C           &kp D           &kp V              &kp K       &kp H           &kp COMMA       &rhm LALT DOT     &kp SLASH
                                                     &mo SYM         &kp SPC            &kp ENTER   &mo NUM
