@@ -464,15 +464,15 @@
 
     // anki_layer
         // |&tog ANKI|         |    T    |    Y    |  K_REDO |        | K_REDO  |    Y     |    T   |         |         |
-        // |         |    1    |    2    |  SPACE  |    4    |        |    4    |  SPACE   |    2   |    1    |         |
-        // |         |         |    B    |    S    |  K_UNDO |        | K_UNDO  |    S     |    B   |         |         |
+        // |    I    |    1    |    2    |  SPACE  |    4    |        |    4    |  SPACE   |    2   |    1    |    I    |
+        // |         |    D    |    B    |    S    |  K_UNDO |        | K_UNDO  |    S     |    B   |    D    |         |
         //                               |  SPACE  |         |        |         |  SPACE   |
 
         anki_layer {
             bindings = <
             &trans     &kp Y      &trans     &kp T      &trans             &kp (K_REDO)  &kp T      &trans     &kp Y       &trans
-            &trans     &kp NUM_1  &kp NUM_2  &kp SPC    &kp NUM_4          &kp NUM_4     &kp SPC    &kp NUM_2  &kp NUM_1   &trans
-            &trans     &trans     &kp B      &kp S      &trans             &kp (K_UNDO)  &kp S      &kp B      &trans      &trans
+            &kp I      &kp NUM_1  &kp NUM_2  &kp SPC    &kp NUM_4          &kp NUM_4     &kp SPC    &kp NUM_2  &kp NUM_1   &kp I
+            &trans     &kp D      &kp B      &kp S      &trans             &kp (K_UNDO)  &kp S      &kp B      &kp D       &trans
                                              &kp SPC    &kp SPC            &kp SPC       &kp SPC
             >;
         };
