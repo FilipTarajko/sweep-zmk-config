@@ -9,7 +9,7 @@ COMBO KEYS
 #define COMBO_TAB 13 14
 #define COMBO_NAV 30 31
 #define COMBO_CTR 32 33
-#define COMBO_ANKI 26 27 28 29
+#define COMBO_ANKI 25 26 OR 23 24
 #define COMBO_BT_CLR 0 4
 #define COMBO_BT_PRV 0 14
 #define COMBO_BT_NXT 0 24
@@ -58,13 +58,7 @@ function_layer
 //                               | PRESSED |         |        |         |  PRESSED |
 
 anki_layer
-// |&tog ANKI|         |    T    |    Y    |  K_REDO |        | K_REDO  |    Y     |    T   |         |         |
-// |         |    1    |    2    |  SPACE  |    4    |        |    4    |  SPACE   |    2   |    1    |         |
-// |         |         |    B    |    S    |  K_UNDO |        | K_UNDO  |    S     |    B   |         |         |
+// |&tog ANKI|    Y    |         |    T    |  K_REDO |        | K_REDO  |    T     |        |    Y    |         |
+// |    I    |    1    |    2    |  SPACE  |    4    |        |    4    |  SPACE   |    2   |    1    |    I    |
+// |         |    S    |    B    |    D    |  K_UNDO |        | K_UNDO  |    D     |    S   |         |         |
 //                               |  SPACE  |         |        |         |  SPACE   |
-
-carpalx_6_optimization
-// |    Q    |    W    |    K    |    R    |    F    |        |    Y    |    U    |    L    |    J    |    P    |
-// |    D    |    S    |    A    |    T    |    N    |        |    H    |    O    |    E    |    I    |    ;    |
-// |    Z    |    X    |    C    |    V    |    B    |        |    G    |    M    |    ,    |    .    |    /    |
-//                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |
