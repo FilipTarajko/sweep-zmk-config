@@ -224,9 +224,6 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
-                , <&macro_press &kp LSHIFT>
-                , <&macro_tap &kp LG(RIGHT)>
-                , <&macro_release &kp LSHIRT>
                 , <&macro_release &kp LCTRL>
                 ;
         };
