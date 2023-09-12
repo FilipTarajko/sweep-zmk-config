@@ -219,7 +219,7 @@
                 ;
         };
         macro_change_screen: macro_change_screen {
-            label = "macro_change_screen;
+            label = "macro_change_screen";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
