@@ -226,7 +226,7 @@
                 = <&macro_press &kp LCTRL>
                 , <&macro_press &kp LSHIFT>
                 , <&macro_tap &kp RIGHT>
-                , <&macro_release &kp LSHIRT>
+                , <&macro_release &kp LSHIFT>
                 , <&macro_release &kp LCTRL>
                 ;
         };
