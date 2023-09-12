@@ -15,16 +15,66 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+//#include "mouse.dtsi"
+#include <dt-bindings/zmk/mouse.h>
+
+&mmv {
+  acceleration-exponent = <1>;      // 1
+  time-to-max-speed-ms = <1500>;    // 40
+  delay-ms = <0>;                   // 0
+};
+
+&mwh {
+  acceleration-exponent = <1>;      // 0
+  time-to-max-speed-ms = <5000>;    // 40
+  delay-ms = <0>;                   // 10
+};
+
+#define U_MOUSE_MOVE_MAX 1250       // 600
+#define U_MOUSE_SCROLL_MAX 100      // 10
+
+#undef MOVE_UP
+#undef MOVE_DOWN
+#undef MOVE_LEFT
+#undef MOVE_RIGHT
+#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#undef SCROLL_LEFT
+#undef SCROLL_RIGHT
+#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+
+#define U_BTN1 &mkp MB1
+#define U_BTN2 &mkp MB2
+#define U_BTN3 &mkp MB3
+#define U_MS_U &mmv MOVE_UP
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
+#define U_WH_U &mwh SCROLL_UP
+#define U_WH_D &mwh SCROLL_DOWN
+#define U_WH_L &mwh SCROLL_LEFT
+#define U_WH_R &mwh SCROLL_RIGHT
+
+
 // Layer definitions
 #define DEF 0
 #define NUM 1
 #define NUM_SYM 2
 #define SYM 3
-#define NAV 4
-#define CTR 5
-#define FUN 6
-#define ANKI 7
-#define OPT6 8
+#define FST_SYM 4
+#define NAV 5
+#define CTR 6
+#define FUN 7
+#define ANKI 8
+#define OPT6 9
 
 // Combo timeout
 #define COMBO_TIMEOUT 40
@@ -34,7 +84,7 @@
 #define COMBO_TAB 13 14
 #define COMBO_NAV 30 31
 #define COMBO_CTR 32 33
-#define COMBO_ANKI 26 27 28 29
+#define COMBO_ANKI 25 26
 //#define COMBO_BT_CLR 0 10 20 9 19 29
 //#define COMBO_BT_PRV 0 10 20 15
 //#define COMBO_BT_NXT 0 10 20 18
@@ -46,6 +96,27 @@
 #define COMBO_PASTE 22 23
 #define COMBO_UNDO 1 2
 #define COMBO_REDO 1 3
+
+#define COMBO_ANKI_L 23 24
+#define COMBO_ESC_R 7 8
+#define COMBO_TAB_R 15 16
+#define COMBO_CUT_R 26 28
+#define COMBO_COPY_R 26 27
+#define COMBO_PASTE_R 27 28
+#define COMBO_UNDO_R 6 7
+#define COMBO_REDO_R 6 8
+
+#define COMBO_MB1 6 7
+#define COMBO_MB2 7 8
+#define COMBO_MB3 6 8
+#define COMBO_MS_U 5 9
+#define COMBO_MS_D 6 9
+#define COMBO_MS_L 25 29
+#define COMBO_MS_R 26 29
+#define COMBO_WH_D 5 6
+#define COMBO_WH_U 8 9
+#define COMBO_WH_L 27 28
+#define COMBO_WH_R 28 29
 
 // Thumb keys
 #define LEFT_THUMB_KEYS 30 31
@@ -95,6 +166,72 @@
         };
     };
 
+    macros {
+        macro_copy: macro_copy {
+            label = "macro_copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        macro_paste: macro_paste {
+            label = "macro_paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        macro_cut: macro_cut {
+            label = "macro_cut";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        macro_undo: macro_undo {
+            label = "macro_undo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        macro_redo: macro_redo {
+            label = "macro_redo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp Y>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        macro_change_screen: macro_change_screen {
+            label = "macro_change_screen";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LSHIFT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -107,6 +244,18 @@
         combo_tab {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_TAB>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_esc_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_ESC_R>;
+            bindings = <&kp ESC>;
+        };
+        
+        combo_tab_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_TAB_R>;
             bindings = <&kp TAB>;
         };
 
@@ -128,6 +277,12 @@
             bindings = <&tog ANKI>;
         };
 
+        combo_anki_l{
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_ANKI_L>;
+            bindings = <&tog ANKI>;
+        };
+
         combo_bt_clr{
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_BT_CLR>;
@@ -146,32 +301,116 @@
             bindings = <&bt BT_NXT>;
         };
 
-
         combo_cut {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_CUT>;
-            bindings = <&kp K_CUT>;
+            bindings = <&macro_cut>;
         };
         combo_copy {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_COPY>;
-            bindings = <&kp K_COPY>;
+            bindings = <&macro_copy>;
         };
         combo_paste {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_PASTE>;
-            bindings = <&kp K_PASTE>;
+            bindings = <&macro_paste>;
         };
 
         combo_undo {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_UNDO>;
-            bindings = <&kp K_UNDO>;
+            bindings = <&macro_undo>;
         };
         combo_redo {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_REDO>;
-            bindings = <&kp K_REDO>;
+            bindings = <&macro_redo>;
+        };
+
+        
+        combo_cut_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_CUT_R>;
+            bindings = <&macro_cut>;
+        };
+        combo_copy_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_COPY_R>;
+            bindings = <&macro_copy>;
+        };
+        combo_paste_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_PASTE_R>;
+            bindings = <&macro_paste>;
+        };
+
+        combo_undo_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_UNDO_R>;
+            bindings = <&macro_undo>;
+        };
+        combo_redo_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_REDO_R>;
+            bindings = <&macro_redo>;
+        };
+
+        combo_mb1 {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MB1>;
+            bindings = <&mkp MB1>;
+        };
+        combo_mb2 {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MB2>;
+            bindings = <&mkp MB2>;
+        };
+        combo_mb3 {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MB3>;
+            bindings = <&mkp MB3>;
+        };
+
+        combo_u_ms_u {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MS_U>;
+            bindings = <&mmv MOVE_UP>;
+        };
+        combo_u_ms_d {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MS_D>;
+            bindings = <&mmv MOVE_DOWN>;
+        };
+        combo_u_ms_l {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MS_L>;
+            bindings = <&mmv MOVE_LEFT>;
+        };
+        combo_u_ms_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MS_R>;
+            bindings = <&mmv MOVE_RIGHT>;
+        };
+        combo_u_wh_u {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_WH_U>;
+            bindings = <&mwh SCROLL_UP>;
+        };
+        combo_u_wh_d {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_WH_D>;
+            bindings = <&mwh SCROLL_DOWN>;
+        };
+        combo_u_wh_l {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_WH_L>;
+            bindings = <&mwh SCROLL_LEFT>;
+        };
+        combo_u_wh_r {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_WH_R>;
+            bindings = <&mwh SCROLL_RIGHT>;
         };
     };
 
@@ -196,47 +435,63 @@
 
 
     // number_layer
-        // |         |    7    |    8    |    9    |    /    |        |         |    +    |    -    |    *    |    \    |
-        // |    0    |    4    |    5    |    6    |    =    |        |  BSPC   | NUM_SYM |    =    |   DEL   |    ;    |
-        // |         |    1    |    2    |    3    |    -    |        |         |    _    |    ,    |    .    |    /    |
+        // |         |    4    |    5    |    6    |    /    |        |         |    +    |    -    |    *    |    ;    |
+        // |    0    |    1    |    2    |    3    |    =    |        |  BSPC   | NUM_SYM |    =    |   DEL   |    /    |
+        // |         |    7    |    8    |    9    |    -    |        |         |    _    |    ;    |    \    |    /    |
         //                               |   FUN   |   SPC   |        |  ENTER  | PRESSED |
 
         number_layer {
             bindings = <
-            &trans      &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp SLASH          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &kp BSLH
-            &kp NUM_0   &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp EQUAL          &kp BSPC    &mo NUM_SYM &kp EQUAL   &kp DEL     &kp SEMI
-            &trans      &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp MINUS          &trans      &kp UNDER   &kp COMMA   &kp DOT     &kp FSLH
+            &trans      &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp SLASH          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &trans
+            &kp NUM_0   &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp EQUAL          &kp BSPC    &mo NUM_SYM &kp EQUAL   &kp DEL     &kp FSLH
+            &trans      &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp MINUS          &trans      &kp UNDER   &kp SEMI    &kp BSLH    &trans
                                                 &mo FUN     &trans             &trans      &trans
             >;
         };
 
 
     // number_symbol_layer
-        // |         |    &    |    *    |    (    |    ?    |        |         |    +    |    -    |    *    |    \    |
-        // |    )    |    $    |    %    |    ^    |    +    |        |  BSPC   | PRESSED |    =    |   DEL   |    ;    |
-        // |         |    !    |    @    |    #    |    _    |        |         |    _    |    ,    |    .    |    /    |
+        // |         |    $    |    %    |    ^    |    ?    |        |         |    +    |    -    |    *    |    ;    |
+        // |    )    |    !    |    @    |    #    |    +    |        |  BSPC   | PRESSED |    =    |   DEL   |    /    |
+        // |         |    &    |    *    |    (    |    _    |        |         |    _    |    ;    |    \    |    /    |
         //                               |   FUN   |   SPC   |        |  ENTER  | PRESSED |
 
         number_symbol_layer {
             bindings = <
-            &trans      &kp AMPS    &kp ASTRK   &kp LPAR    &kp QMARK          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &kp BSLH
-            &kp RPAR    &kp DOLLAR  &kp PERCENT &kp CARET   &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &kp SEMI
-            &trans      &kp EXCL    &kp AT      &kp HASH    &kp UNDER          &trans      &kp UNDER   &kp COMMA   &kp DOT     &kp FSLH
-                                                &mo FUN     &trans             &trans      &trans
+            &trans      &kp DOLLAR      &kp PERCENT         &kp  CARET       &kp QMARK          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &trans
+            &kp RPAR    &kp EXCL        &kp AT              &kp HASH         &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &kp FSLH
+            &trans      &kp AMPS        &kp ASTRK           &kp LPAR         &kp UNDER          &trans      &kp UNDER   &kp SEMI    &kp BSLH    &trans
+                                        &mo FUN             &trans           &trans             &trans
             >;
         };
 
 
     // symbol_layer
         // |         |         |         |         |         |        |   ` ~   |    @    |    &    |    |    |    \    |
-        // |         |         |         |         |         |        |   " '   |   ( )   |   { }   |   [ ]   |   < >   |
+        // |         |         |         | FST_SYM |         |        |   " '   |   ( )   |   { }   |   [ ]   |   < >   |
         // |         |         |         |         |         |        |    $    |    %    |    !    |    #    |    ^    |
         //                               | PRESSED |   SPC   |        |  ENTER  |   FUN   | 
 
         symbol_layer {
             bindings = <
-            &trans  &trans  &trans  &trans  &trans          &dk TILDE GRAVE &kp AT          &kp AMPS        &kp PIPE        &kp BSLH
-            &trans  &trans  &trans  &trans  &trans          &dk APOS DQT    &dk RPAR LPAR   &dk RBRC LBRC   &dk RBKT LBKT   &dk GT LT
+            &trans  &trans  &trans  &trans      &trans          &dk TILDE GRAVE &kp AT          &kp AMPS        &kp PIPE        &kp BSLH
+            &trans  &trans  &trans  &mo FST_SYM &trans          &dk APOS DQT    &dk RPAR LPAR   &dk RBRC LBRC   &dk RBKT LBKT   &dk GT LT
+            &trans  &trans  &trans  &trans      &trans          &kp DOLLAR      &kp PERCENT     &kp EXCL        &kp HASH        &kp CARET
+                                    &trans      &trans          &trans          &mo FUN
+            >;
+        };
+
+
+    // fast_symbol_layer
+        // |         |         |         |         |         |        |    ~    |    @    |    &    |    |    |    \    |
+        // |         |         |         |         |         |        |    '    |    )    |    }    |    ]    |    >    |
+        // |         |         |         |         |         |        |    $    |    %    |    !    |    #    |    ^    |
+        //                               | PRESSED |   SPC   |        |  ENTER  |   FUN   | 
+
+        fast_symbol_layer {
+            bindings = <
+            &trans  &trans  &trans  &trans  &trans          &kp TILDE       &kp AT          &kp AMPS        &kp PIPE        &kp BSLH
+            &trans  &trans  &trans  &trans  &trans          &kp APOS        &kp RPAR        &kp RBRC        &kp RBKT        &kp GT
             &trans  &trans  &trans  &trans  &trans          &kp DOLLAR      &kp PERCENT     &kp EXCL        &kp HASH        &kp CARET
                                     &trans  &trans          &trans          &mo FUN
             >;
@@ -261,49 +516,49 @@
 
     // control_layer
         // Everything is gui modified
+        // |         |    4    |         |         |         |        |         |          |        |         |         |
+        // |    0    |    1    |    2    |    3    |         |        |    ←    |     ↓    |    ↑   |    →    |         |
         // |         |         |         |         |         |        |         |          |        |         |         |
-        // |    0    |    4    |  lCTRL  |  SHIFT  |         |        |    ←    |     ↓    |    ↑   |    →    |         |
-        // |         |    1    |    2    |    3    |         |        |         |          |        |         |         |
-        //                               |         |         |        |  COMBO  |   COMBO  |
+        //                               |  SHIFT  |  lCtrl  |        |  COMBO  |   COMBO  |
 
         control_layer {
             bindings = <
-            &none           &trans          &trans          &trans          &trans          &trans          &trans        &trans      &trans          &trans
-            &kp LG(NUM_0)   &kp LG(NUM_4)   &kp LCTRL       &kp LSHIFT      &trans          &kp LG(LEFT)    &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)   &trans
-            &none           &kp LG(NUM_1)   &kp LG(NUM_2)   &kp LG(NUM_3)   &trans          &trans          &trans        &trans      &trans          &trans
-                                                            &trans          &trans          &trans          &trans
+            &none           &kp LG(NUM_4)   &mwh SCROLL_LEFT    &mwh SCROLL_RIGHT   &mwh SCROLL_UP              &mkp MB1          &mkp MB2              &mkp MB3        &trans          &trans
+            &kp LG(NUM_0)   &kp LG(NUM_1)   &kp LG(NUM_2)       &kp LG(NUM_3)       &macro_change_screen        &kp LG(LEFT)      &kp LG(DOWN)          &kp LG(UP)      &kp LG(RIGHT)   &trans
+            &none           &kp LG(NUM_7)   &kp LG(NUM_8)       &kp LG(NUM_9)       &mwh SCROLL_DOWN            &mmv MOVE_LEFT    &mmv MOVE_DOWN        &mmv MOVE_UP    &mmv MOVE_RIGHT &trans
+                                                                &kp LCTRL           &kp LSHIFT                  &trans            &trans
             >;
         };
 
 
     // function_layer
-        // |   F12   |    F7   |    F8   |    F9   |  PrtScn |        |   C_RW  |  vol 1/0 |  K_APP |  C_FF   |         |
-        // |   F11   |    F4   |    F5   |    F6   |         |        | med prev|   vol-   |   vol+ | med next|         |
-        // |   F10   |    F1   |    F2   |    F3   |         |        |         | media p/p|        |         |         |
+        // |   F11   |    F4   |    F5   |    F6   |  PrtScn |        |   C_RW  |  vol 1/0 |  K_APP |  C_FF   |         |
+        // |   F10   |    F1   |    F2   |    F3   |         |        | med prev|   vol-   |   vol+ | med next|         |
+        // |   F12   |    F7   |    F8   |    F9   |         |        |         | media p/p|        |         |         |
         //                               | PRESSED |         |        |         |  PRESSED |
 
         function_layer {
             bindings = <
-            &kp F12 &kp F7  &kp F8  &kp F9  &kp PSCRN              &kp C_RW    &kp C_MUTE        &kp K_APP       &kp C_FF    &trans
-            &kp F11 &kp F4  &kp F5  &kp F6  &trans                 &kp C_PREV  &kp C_VOL_DN      &kp C_VOL_UP    &kp C_NEXT  &trans
-            &kp F10 &kp F1  &kp F2  &kp F3  &trans                 &trans      &kp C_PLAY_PAUSE  &trans          &trans      &trans
+            &kp F11 &kp F4  &kp F5  &kp F6  &kp PSCRN              &kp C_RW    &kp C_MUTE        &kp K_APP       &kp C_FF    &trans
+            &kp F10 &kp F1  &kp F2  &kp F3  &trans                 &kp C_PREV  &kp C_VOL_DN      &kp C_VOL_UP    &kp C_NEXT  &trans
+            &kp F12 &kp F7  &kp F8  &kp F9  &trans                 &trans      &kp C_PLAY_PAUSE  &trans          &trans      &trans
                                     &trans  &trans                 &trans      &trans
             >;
         };
 
 
     // anki_layer
-        // |&tog ANKI|         |    T    |    Y    |  K_REDO |        | K_REDO  |    Y     |    T   |         |         |
-        // |         |    1    |    2    |  SPACE  |    4    |        |    4    |  SPACE   |    2   |    1    |         |
-        // |         |         |    B    |    S    |  K_UNDO |        | K_UNDO  |    S     |    B   |         |         |
+        // |&tog ANKI|    Y    |         |    T    |  K_REDO |        | K_REDO  |    T     |        |    Y    |         |
+        // |    I    |    1    |    2    |  SPACE  |    4    |        |    4    |  SPACE   |    2   |    1    |    I    |
+        // |         |    S    |    B    |    D    |  K_UNDO |        | K_UNDO  |    D     |    S   |         |         |
         //                               |  SPACE  |         |        |         |  SPACE   |
 
         anki_layer {
             bindings = <
-            &tog ANKI &none      &kp T      &kp Y      &kp (K_REDO)       &kp (K_REDO)  &kp Y      &kp T      &none      &none
-            &none     &kp NUM_1  &kp NUM_2  &kp SPC    &kp NUM_4          &kp NUM_4     &kp SPC    &kp NUM_2  &kp NUM_1  &none
-            &none     &none      &kp B      &kp S      &kp (K_UNDO)       &kp (K_UNDO)  &kp S      &kp B      &none      &none
-                                            &kp SPC    &none              &none         &kp SPC
+            &trans     &kp Y      &trans     &kp T      &trans             &kp B         &kp T      &trans     &kp Y       &trans
+            &kp I      &kp NUM_1  &kp NUM_2  &kp SPC    &kp NUM_4          &kp NUM_4     &kp SPC    &kp NUM_2  &kp NUM_1   &kp I
+            &trans     &trans     &kp S      &kp D      &trans             &trans        &kp D      &kp S      &trans      &trans
+                                             &kp SPC    &kp SPC            &kp SPC       &kp SPC
             >;
         };
 	};
