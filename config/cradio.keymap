@@ -218,6 +218,18 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
+        macro_change_screen: macro_change_screen {
+            label = "macro_change_screen;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp LG(RIGHT)>
+                , <&macro_release &kp LSHIRT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
     };
 
     combos {
@@ -511,8 +523,8 @@
 
         control_layer {
             bindings = <
-            &none           &kp LG(NUM_4)   &mwh SCROLL_LEFT    &mwh SCROLL_RIGHT   &trans                      &mkp MB1          &mkp MB2              &mkp MB3        &trans          &trans
-            &kp LG(NUM_0)   &kp LG(NUM_1)   &kp LG(NUM_2)       &kp LG(NUM_3)       &mwh SCROLL_UP              &kp LG(LEFT)      &kp LG(DOWN)          &kp LG(UP)      &kp LG(RIGHT)   &trans
+            &none           &kp LG(NUM_4)   &mwh SCROLL_LEFT    &mwh SCROLL_RIGHT   &mwh SCROLL_UP              &mkp MB1          &mkp MB2              &mkp MB3        &trans          &trans
+            &kp LG(NUM_0)   &kp LG(NUM_1)   &kp LG(NUM_2)       &kp LG(NUM_3)       &macro_change_screen        &kp LG(LEFT)      &kp LG(DOWN)          &kp LG(UP)      &kp LG(RIGHT)   &trans
             &none           &kp LG(NUM_7)   &kp LG(NUM_8)       &kp LG(NUM_9)       &mwh SCROLL_DOWN            &mmv MOVE_LEFT    &mmv MOVE_DOWN        &mmv MOVE_UP    &mmv MOVE_RIGHT &trans
                                                                 &kp LCTRL           &kp LSHIFT                  &trans            &trans
             >;
