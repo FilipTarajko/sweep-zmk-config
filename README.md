@@ -1,2 +1,3 @@
 # sweep-zmk-config
-fork of jilquero's zmk-config for sweep
+
+My zmk-config for [sweep](https://github.com/davidphilipbarr/Sweep)
