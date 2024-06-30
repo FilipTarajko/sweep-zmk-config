@@ -401,9 +401,9 @@
 
         control_layer {
             bindings = <
-            &none           &kp LG(NUM_4)   &trans              &trans              &trans                      &trans            &trans                &trans          &trans          &trans
+            &none           &kp LG(NUM_4)   &trans              &trans              &trans                      U_MS_L            U_MS_D                U_MS_U          U_MS_R          &trans
             &kp LG(NUM_0)   &kp LG(NUM_1)   &kp LG(NUM_2)       &kp LG(NUM_3)       &macro_change_screen        &kp LG(LEFT)      &kp LG(DOWN)          &kp LG(UP)      &kp LG(RIGHT)   &trans
-            &none           &kp LG(NUM_7)   &kp LG(NUM_8)       &kp LG(NUM_9)       &trans                      &trans            &trans                &trans          &trans          &trans
+            &none           &kp LG(NUM_7)   &kp LG(NUM_8)       &kp LG(NUM_9)       &trans                      U_WH_L            U_WH_D                U_WH_U          U_WH_R          &trans
                                                                 &kp LCTRL           &kp LSHIFT                  &trans            &trans
             >;
         };
