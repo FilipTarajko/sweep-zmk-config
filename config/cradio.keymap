@@ -15,55 +15,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-//#include "mouse.dtsi"
-#include <dt-bindings/zmk/mouse.h>
-
-&mmv {
-  acceleration-exponent = <1>;      // 1
-  time-to-max-speed-ms = <1500>;    // 40
-  delay-ms = <0>;                   // 0
-};
-
-&mwh {
-  acceleration-exponent = <1>;      // 0
-  time-to-max-speed-ms = <5000>;    // 40
-  delay-ms = <0>;                   // 10
-};
-
-#define U_MOUSE_MOVE_MAX 1250       // 600
-#define U_MOUSE_SCROLL_MAX 100      // 10
-
-#undef MOVE_UP
-#undef MOVE_DOWN
-#undef MOVE_LEFT
-#undef MOVE_RIGHT
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
-
-#undef SCROLL_UP
-#undef SCROLL_DOWN
-#undef SCROLL_LEFT
-#undef SCROLL_RIGHT
-#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
-
-#define U_BTN1 &mkp MB1
-#define U_BTN2 &mkp MB2
-#define U_BTN3 &mkp MB3
-#define U_MS_U &mmv MOVE_UP
-#define U_MS_D &mmv MOVE_DOWN
-#define U_MS_L &mmv MOVE_LEFT
-#define U_MS_R &mmv MOVE_RIGHT
-#define U_WH_U &mwh SCROLL_UP
-#define U_WH_D &mwh SCROLL_DOWN
-#define U_WH_L &mwh SCROLL_LEFT
-#define U_WH_R &mwh SCROLL_RIGHT
-
-
 // Layer definitions
 #define DEF 0
 #define NUM 1
@@ -105,18 +56,6 @@
 #define COMBO_PASTE_R 27 28
 #define COMBO_UNDO_R 6 7
 #define COMBO_REDO_R 6 8
-
-#define COMBO_MB1 6 7
-#define COMBO_MB2 7 8
-#define COMBO_MB3 6 8
-#define COMBO_MS_U 5 9
-#define COMBO_MS_D 6 9
-#define COMBO_MS_L 25 29
-#define COMBO_MS_R 26 29
-#define COMBO_WH_D 5 6
-#define COMBO_WH_U 8 9
-#define COMBO_WH_L 27 28
-#define COMBO_WH_R 28 29
 
 // Thumb keys
 #define LEFT_THUMB_KEYS 30 31
@@ -371,47 +310,6 @@
             key-positions = <COMBO_MB3>;
             bindings = <&mkp MB3>;
         };
-
-        combo_u_ms_u {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MS_U>;
-            bindings = <&mmv MOVE_UP>;
-        };
-        combo_u_ms_d {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MS_D>;
-            bindings = <&mmv MOVE_DOWN>;
-        };
-        combo_u_ms_l {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MS_L>;
-            bindings = <&mmv MOVE_LEFT>;
-        };
-        combo_u_ms_r {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MS_R>;
-            bindings = <&mmv MOVE_RIGHT>;
-        };
-        combo_u_wh_u {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_WH_U>;
-            bindings = <&mwh SCROLL_UP>;
-        };
-        combo_u_wh_d {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_WH_D>;
-            bindings = <&mwh SCROLL_DOWN>;
-        };
-        combo_u_wh_l {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_WH_L>;
-            bindings = <&mwh SCROLL_LEFT>;
-        };
-        combo_u_wh_r {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_WH_R>;
-            bindings = <&mwh SCROLL_RIGHT>;
-        };
     };
 
     keymap {
@@ -517,15 +415,15 @@
     // control_layer
         // Everything is gui modified
         // |         |    4    |         |         |         |        |         |          |        |         |         |
-        // |    0    |    1    |    2    |    3    |         |        |    ←    |     ↓    |    ↑   |    →    |         |
+        // |    0    |    1    |    2    |    3    |         |        |    ←   |     ↓    |    ↑   |    →    |         |
         // |         |         |         |         |         |        |         |          |        |         |         |
         //                               |  SHIFT  |  lCtrl  |        |  COMBO  |   COMBO  |
 
         control_layer {
             bindings = <
-            &none           &kp LG(NUM_4)   &mwh SCROLL_LEFT    &mwh SCROLL_RIGHT   &mwh SCROLL_UP              &mkp MB1          &mkp MB2              &mkp MB3        &trans          &trans
+            &none           &kp LG(NUM_4)   &trans              &trans              &trans                      &trans            &trans                &trans          &trans          &trans
             &kp LG(NUM_0)   &kp LG(NUM_1)   &kp LG(NUM_2)       &kp LG(NUM_3)       &macro_change_screen        &kp LG(LEFT)      &kp LG(DOWN)          &kp LG(UP)      &kp LG(RIGHT)   &trans
-            &none           &kp LG(NUM_7)   &kp LG(NUM_8)       &kp LG(NUM_9)       &mwh SCROLL_DOWN            &mmv MOVE_LEFT    &mmv MOVE_DOWN        &mmv MOVE_UP    &mmv MOVE_RIGHT &trans
+            &none           &kp LG(NUM_7)   &kp LG(NUM_8)       &kp LG(NUM_9)       &trans                      &trans            &trans                &trans          &trans          &trans
                                                                 &kp LCTRL           &kp LSHIFT                  &trans            &trans
             >;
         };
