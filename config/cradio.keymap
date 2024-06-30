@@ -39,7 +39,7 @@
 #define COMBO_CTR 32 33
 #define COMBO_ANKI 25 26
 #define COMBO_MOUSELAYER 10 20
-#define COMBO_MOUSELAYER 19 29
+#define COMBO_MOUSELAYER2 19 29
 //#define COMBO_BT_CLR 0 10 20 9 19 29
 //#define COMBO_BT_PRV 0 10 20 15
 //#define COMBO_BT_NXT 0 10 20 18
@@ -477,7 +477,7 @@
         // | TOGGLE  |         |         |         |         |        |         |          |        |         |         |
         //                               |  SHIFT  |  lCtrl  |        |  COMBO  |   COMBO  |
 
-        mouse_layer {
+        mouse_layer2 {
             bindings = <
             &trans    &trans          &trans        &trans              &trans                      &trans            &trans            &trans          &trans          &trans
             &trans    &trans          &trans        &trans              &trans                      &mkp MCLK         U_MS_L            U_MS_D          U_MS_U          U_MS_R
