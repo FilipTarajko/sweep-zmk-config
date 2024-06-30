@@ -26,7 +26,7 @@
 #define CTR 6
 #define FUN 7
 #define ANKI 8
-#define OPT6 9
+#define MOUSELAYER 9
 
 // Combo timeout
 #define COMBO_TIMEOUT 40
@@ -37,6 +37,7 @@
 #define COMBO_NAV 30 31
 #define COMBO_CTR 32 33
 #define COMBO_ANKI 25 26
+#define COMBO_MOUSELAYER 10 20
 //#define COMBO_BT_CLR 0 10 20 9 19 29
 //#define COMBO_BT_PRV 0 10 20 15
 //#define COMBO_BT_NXT 0 10 20 18
@@ -213,6 +214,11 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_ANKI>;
             bindings = <&tog ANKI>;
+        };
+        combo_mouselayer{
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_MOUSELAYER>;
+            bindings = <&tog MOUSELAYER>;
         };
 
         combo_anki_l{
@@ -440,6 +446,21 @@
             &kp I      &kp NUM_1  &kp NUM_2  &kp SPC    &kp NUM_4          &kp NUM_4     &kp SPC    &kp NUM_2  &kp NUM_1   &kp I
             &trans     &trans     &kp S      &kp D      &trans             &trans        &kp D      &kp S      &trans      &trans
                                              &kp SPC    &kp SPC            &kp SPC       &kp SPC
+            >;
+        };
+
+    // mouse_layer
+        // |         |         |         |         |         |        |         |          |        |         |         |
+        // | TOGGLE  |         |         |         |         |        |    ←   |     ↓    |    ↑   |    →    |         |
+        // | TOGGLE  |         |         |         |         |        |         |          |        |         |         |
+        //                               |  SHIFT  |  lCtrl  |        |  COMBO  |   COMBO  |
+
+        mouse_layer {
+            bindings = <
+            &trans    &trans          &trans        &trans              &trans                      &trans            &trans            &trans          &trans          &trans
+            &trans    &trans          &trans        &trans              &trans                      U_MS_L            U_MS_D            U_MS_U          U_MS_R          &mkp MCLK
+            &trans    &trans          &trans        &trans              &trans                      U_WH_L            U_WH_D            U_WH_U          U_WH_R          &trans
+                                                    &mkp MB5            &mkp MB4                    &mkp LCLK         &mkp RCLK
             >;
         };
 	};
