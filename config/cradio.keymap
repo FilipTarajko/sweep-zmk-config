@@ -294,22 +294,6 @@
             key-positions = <COMBO_REDO_R>;
             bindings = <&macro_redo>;
         };
-
-        combo_mb1 {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MB1>;
-            bindings = <&mkp MB1>;
-        };
-        combo_mb2 {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MB2>;
-            bindings = <&mkp MB2>;
-        };
-        combo_mb3 {
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MB3>;
-            bindings = <&mkp MB3>;
-        };
     };
 
     keymap {
