@@ -338,15 +338,15 @@
 
 
     // number_symbol_layer
-        // |         |    $    |    %    |    ^    |    ?    |        |         |    +    |         |         |         |
-        // |    )    |    !    |    @    |    #    |    +    |        |  BSPC   | PRESSED |    =    |   DEL   |         |
+        // |         |    $    |    %    |    ^    |    ?    |        |         |         |         |         |         |
+        // |    )    |    !    |    @    |    #    |    +    |        |  BSPC   | PRESSED |    =    |   DEL   |   BSPC  |
         // |         |    &    |    *    |    (    |    _    |        |         |         |         |         |         |
         //                               |   FUN   |   SPC   |        |  ENTER  | PRESSED |
 
         number_symbol_layer {
             bindings = <
-            &trans      &kp DOLLAR      &kp PERCENT         &kp CARET        &kp QMARK          &trans      &kp PLUS    &trans      &trans      &trans
-            &kp RPAR    &kp EXCL        &kp AT              &kp HASH         &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &trans
+            &trans      &kp DOLLAR      &kp PERCENT         &kp CARET        &kp QMARK          &trans      &trans      &trans      &trans      &trans
+            &kp RPAR    &kp EXCL        &kp AT              &kp HASH         &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &kp BSPC
             &trans      &kp AMPS        &kp ASTRK           &kp LPAR         &trans             &trans      &trans      &trans      &trans      &trans
                                         &mo FUN             &trans           &trans             &trans
             >;
@@ -361,9 +361,9 @@
 
         symbol_layer {
             bindings = <
-            &trans  &trans  &trans  &trans      &trans          &trans         &dk TILDE GRAVE  &trans          &dk BSLH PIPE   &trans
-            &trans  &trans  &trans  &mo FST_SYM &trans          &dk APOS DQT   &dk RPAR LPAR    &dk RBRC LBRC   &dk RBKT LBKT   &dk GT LT
-            &trans  &trans  &trans  &trans      &trans          &trans         &dk MINUS UNDER  &trans          &trans          &trans
+            &trans  &trans  &trans  &trans      &trans          &trans         &dk TILDE GRAVE     &trans          &dk BSLH PIPE   &trans
+            &trans  &trans  &trans  &mo FST_SYM &trans          &dk APOS DQT   &dk RPAR LPAR       &dk RBRC LBRC   &dk RBKT LBKT   &dk GT LT
+            &trans  &trans  &trans  &trans      &trans          &trans         &dk KP_MINUS UNDER  &trans          &trans          &trans
                                     &trans      &trans          &trans         &mo FUN
             >;
         };
