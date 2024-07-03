@@ -329,64 +329,64 @@
 
 
     // number_layer
-        // |         |    4    |    5    |    6    |    /    |        |         |    +    |    -    |    *    |    ;    |
-        // |    0    |    1    |    2    |    3    |    =    |        |  BSPC   | NUM_SYM |    =    |   DEL   |    /    |
-        // |         |    7    |    8    |    9    |    -    |        |         |    _    |    ;    |    \    |    /    |
+        // |         |    4    |    5    |    6    |    /    |        |         |    +    |         |         |         |
+        // |    0    |    1    |    2    |    3    |    =    |        |  BSPC   | NUM_SYM |    =    |   DEL   |         |
+        // |         |    7    |    8    |    9    |         |        |         |         |         |         |         |
         //                               |   FUN   |   SPC   |        |  ENTER  | PRESSED |
 
         number_layer {
             bindings = <
-            &trans      &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp SLASH          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &trans
-            &kp NUM_0   &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp EQUAL          &kp BSPC    &mo NUM_SYM &kp EQUAL   &kp DEL     &kp FSLH
-            &trans      &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp MINUS          &trans      &kp UNDER   &kp SEMI    &kp BSLH    &trans
+            &trans      &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp SLASH          &trans      &kp PLUS    &trans      &trans      &trans
+            &kp NUM_0   &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp EQUAL          &kp BSPC    &mo NUM_SYM &kp EQUAL   &kp DEL     &trans
+            &trans      &kp NUM_7   &kp NUM_8   &kp NUM_9   &trans             &trans      &trans      &trans      &trans      &trans
                                                 &mo FUN     &trans             &trans      &trans
             >;
         };
 
 
     // number_symbol_layer
-        // |         |    $    |    %    |    ^    |    ?    |        |         |    +    |    -    |    *    |    ;    |
-        // |    )    |    !    |    @    |    #    |    +    |        |  BSPC   | PRESSED |    =    |   DEL   |    /    |
-        // |         |    &    |    *    |    (    |    _    |        |         |    _    |    ;    |    \    |    /    |
+        // |         |    $    |    %    |    ^    |    ?    |        |         |    +    |         |         |         |
+        // |    )    |    !    |    @    |    #    |    +    |        |  BSPC   | PRESSED |    =    |   DEL   |         |
+        // |         |    &    |    *    |    (    |    _    |        |         |         |         |         |         |
         //                               |   FUN   |   SPC   |        |  ENTER  | PRESSED |
 
         number_symbol_layer {
             bindings = <
-            &trans      &kp DOLLAR      &kp PERCENT         &kp  CARET       &kp QMARK          &trans      &kp PLUS    &kp MINUS   &kp ASTRK   &trans
-            &kp RPAR    &kp EXCL        &kp AT              &kp HASH         &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &kp FSLH
-            &trans      &kp AMPS        &kp ASTRK           &kp LPAR         &kp UNDER          &trans      &kp UNDER   &kp SEMI    &kp BSLH    &trans
+            &trans      &kp DOLLAR      &kp PERCENT         &kp CARET        &kp QMARK          &trans      &kp PLUS    &trans      &trans      &trans
+            &kp RPAR    &kp EXCL        &kp AT              &kp HASH         &kp PLUS           &kp BSPC    &trans      &kp EQUAL   &kp DEL     &trans
+            &trans      &kp AMPS        &kp ASTRK           &kp LPAR         &trans             &trans      &trans      &trans      &trans      &trans
                                         &mo FUN             &trans           &trans             &trans
             >;
         };
 
 
     // symbol_layer
-        // |         |         |         |         |         |        |   ` ~   |         |         |    |    |    \    |
+        // |         |         |         |         |         |        |         |   ` ~   |         |   \ |   |         |
         // |         |         |         | FST_SYM |         |        |   " '   |   ( )   |   { }   |   [ ]   |   < >   |
-        // |         |         |         |         |         |        |         |         |         |         |         |
+        // |         |         |         |         |         |        |         |   - _   |         |         |         |
         //                               | PRESSED |   SPC   |        |  ENTER  |   FUN   | 
 
         symbol_layer {
             bindings = <
-            &trans  &trans  &trans  &trans      &trans          &dk TILDE GRAVE &trans          &trans          &kp PIPE        &kp BSLH
-            &trans  &trans  &trans  &mo FST_SYM &trans          &dk APOS DQT    &dk RPAR LPAR   &dk RBRC LBRC   &dk RBKT LBKT   &dk GT LT
-            &trans  &trans  &trans  &trans      &trans          &trans          &trans          &trans          &trans          &trans
-                                    &trans      &trans          &trans          &mo FUN
+            &trans  &trans  &trans  &trans      &trans          &trans         &dk TILDE GRAVE  &trans          &dk BSLH PIPE   &trans
+            &trans  &trans  &trans  &mo FST_SYM &trans          &dk APOS DQT   &dk RPAR LPAR    &dk RBRC LBRC   &dk RBKT LBKT   &dk GT LT
+            &trans  &trans  &trans  &trans      &trans          &trans         &dk MINUS UNDER  &trans          &trans          &trans
+                                    &trans      &trans          &trans         &mo FUN
             >;
         };
 
 
     // fast_symbol_layer
-        // |         |         |         |         |         |        |    ~    |         |         |    |    |    \    |
+        // |         |         |         |         |         |        |         |    ~    |         |    |    |         |
         // |         |         |         |         |         |        |    '    |    )    |    }    |    ]    |    >    |
-        // |         |         |         |         |         |        |         |         |         |         |         |
+        // |         |         |         |         |         |        |         |    _    |         |         |         |
         //                               | PRESSED |   SPC   |        |  ENTER  |   FUN   | 
 
         fast_symbol_layer {
             bindings = <
-            &trans  &trans  &trans  &trans  &trans          &kp TILDE       &trans          &trans          &kp PIPE        &kp BSLH
+            &trans  &trans  &trans  &trans  &trans          &trans          &kp TILDE       &trans          &kp PIPE        &trans
             &trans  &trans  &trans  &trans  &trans          &kp APOS        &kp RPAR        &kp RBRC        &kp RBKT        &kp GT
-            &trans  &trans  &trans  &trans  &trans          &trans          &trans          &trans          &trans          &trans
+            &trans  &trans  &trans  &trans  &trans          &trans          &kp UNDER       &trans          &trans          &trans
                                     &trans  &trans          &trans          &mo FUN
             >;
         };
@@ -394,15 +394,15 @@
 
     // navigation_layer
         // |         |         |         |         |         |        |   Home  | Pg down |  Pg up  |   End   |  Insert |
-        // |         |         |         |         |         |        |    ←    |    ↓    |    ↑    |    →   |  Caps   |
-        // |         |         |         |         |         |        |         |         |         |         |         |
+        // |         |         |         |         |         |        |    ←    |    ↓    |    ↑    |    →   |         |
+        // |         |         |         |         |         |        |         |         |         |         |   Caps  |
         //                               |  COMBO  |  COMBO  |        |         |         |
 
         navigation_layer {
             bindings = <
             &trans  &trans  &trans  &trans  &trans          &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &kp INSERT
-            &trans  &trans  &trans  &trans  &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp CAPS
-            &trans  &trans  &trans  &trans  &trans          &trans      &trans      &trans      &trans      &trans
+            &trans  &trans  &trans  &trans  &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
+            &trans  &trans  &trans  &trans  &trans          &trans      &trans      &trans      &trans      &kp CAPS
                                     &trans  &trans          &trans      &trans
             >;
         };
