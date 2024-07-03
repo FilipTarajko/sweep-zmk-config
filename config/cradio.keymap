@@ -27,7 +27,6 @@
 #define FUN 7
 #define ANKI 8
 #define MOUSELAYER 9
-#define MOUSELAYER2 10
 
 // Combo timeout
 #define COMBO_TIMEOUT 40
@@ -39,7 +38,6 @@
 #define COMBO_CTR 32 33
 #define COMBO_ANKI 25 26 27
 #define COMBO_MOUSELAYER 10 20
-#define COMBO_MOUSELAYER2 19 29
 //#define COMBO_BT_CLR 0 10 20 9 19 29
 //#define COMBO_BT_PRV 0 10 20 15
 //#define COMBO_BT_NXT 0 10 20 18
@@ -221,11 +219,6 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_MOUSELAYER>;
             bindings = <&tog MOUSELAYER>;
-        };
-        combo_mouselayer2{
-            timeout-ms = <COMBO_TIMEOUT>;
-            key-positions = <COMBO_MOUSELAYER2>;
-            bindings = <&tog MOUSELAYER2>;
         };
 
         combo_anki_l{
@@ -467,21 +460,6 @@
             &trans    &trans          &trans        &trans              &trans                      &trans            &trans            &trans          &trans          &trans
             &trans    &trans          &trans        &trans              &trans                      U_MS_L            U_MS_D            U_MS_U          U_MS_R          &mkp MCLK
             &trans    &trans          &trans        &trans              &trans                      U_WH_L            U_WH_D            U_WH_U          U_WH_R          &trans
-                                                    &mkp MB5            &mkp MB4                    &mkp LCLK         &mkp RCLK
-            >;
-        };
-
-    // mouse_layer_2
-        // |         |         |         |         |         |        |         |          |        |         |         |
-        // | TOGGLE  |         |         |         |         |        |    ←   |     ↓    |    ↑   |    →    |         |
-        // | TOGGLE  |         |         |         |         |        |         |          |        |         |         |
-        //                               |  SHIFT  |  lCtrl  |        |  COMBO  |   COMBO  |
-
-        mouse_layer2 {
-            bindings = <
-            &trans    &trans          &trans        &trans              &trans                      &trans            &trans            &trans          &trans          &trans
-            &trans    &trans          &trans        &trans              &trans                      &mkp MCLK         U_MS_L            U_MS_D          U_MS_U          U_MS_R
-            &trans    &trans          &trans        &trans              &trans                      &trans            U_WH_L            U_WH_D          U_WH_U          U_WH_R
                                                     &mkp MB5            &mkp MB4                    &mkp LCLK         &mkp RCLK
             >;
         };
