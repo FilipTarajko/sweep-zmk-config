@@ -361,7 +361,7 @@
 
         symbol_layer {
             bindings = <
-            &trans  &trans  &trans  &trans      &trans          &trans         &dk TILDE GRAVE     &trans          &dk BSLH PIPE   &trans
+            &trans  &trans  &trans  &trans      &trans          &trans         &dk TILDE GRAVE     &trans          &dk PIPE BSLH   &trans
             &trans  &trans  &trans  &mo FST_SYM &trans          &dk APOS DQT   &dk RPAR LPAR       &dk RBRC LBRC   &dk RBKT LBKT   &dk GT LT
             &trans  &trans  &trans  &trans      &trans          &trans         &dk UNDER KP_MINUS  &trans          &trans          &trans
                                     &trans      &trans          &trans         &mo FUN
