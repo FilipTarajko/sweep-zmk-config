@@ -393,7 +393,7 @@
 
         navigation_layer {
             bindings = <
-            &trans  &trans  &trans  &trans  &trans          &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &trans
+            &trans  &trans  &trans  &trans  &trans          &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &kp HOME
             &trans  &trans  &trans  &trans  &trans          &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &kp LEFT
             &trans  &trans  &trans  &trans  &trans          &trans      &kp INSERT  &trans      &trans      &kp CAPS
                                     &trans  &trans          &trans      &trans
