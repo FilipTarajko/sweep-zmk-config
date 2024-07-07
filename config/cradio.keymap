@@ -450,17 +450,17 @@
         };
 
     // mouse_layer
-        // |         |         |         |         |         |        |         |    MMB   |        |         |         |
+        // |         |         |         |         |         |        |         |    MMB   |   MB4  |   MB5   |         |
         // | TOGGLE  |         |         |         |         |        |    ←   |     ↓    |    ↑   |    →    |    ←    |  // move mouse
         // | TOGGLE  |         |         |         |         |        |    ←   |     ↓    |    ↑   |    →    |    ←    |  // scroll
-        //                               |   MB5   |   MB4   |        |   LMB   |    RMB   |
+        //                               |         |         |        |   LMB   |    RMB   |
 
         mouse_layer {
             bindings = <
-            &trans    &trans      &trans     &trans        &trans                 &trans          &mkp MCLK     &trans      &trans      &trans
+            &trans    &trans      &trans     &trans        &trans                 &trans          &mkp MCLK     &mkp MB4    &mkp MB5    &trans
             &trans    &trans      &trans     &trans        &trans                 U_MS_L          U_MS_D        U_MS_U      U_MS_R      U_MS_L
             &trans    &trans      &trans     &trans        &trans                 U_WH_L          U_WH_D        U_WH_U      U_WH_R      U_WH_L
-                                             &mkp MB5      &mkp MB4               &mkp LCLK       &mkp RCLK
+                                             &trans        &trans                 &mkp LCLK       &mkp RCLK
             >;
         };
 	};
