@@ -28,6 +28,7 @@
 #define ANKI 8
 #define MOUSELAYER 9
 #define WASD 10
+#define RAW_COLEMAK 11
 
 // Combo timeout
 #define COMBO_TIMEOUT 40
@@ -39,6 +40,7 @@
 #define COMBO_CTR 32 33
 #define COMBO_ANKI 25 26 27
 #define COMBO_WASD 2 11 13
+#define COMBO_RAW_COLEMAK 1 10 23
 #define COMBO_MOUSELAYER 10 20
 //#define COMBO_BT_CLR 0 10 20 9 19 29
 //#define COMBO_BT_PRV 0 10 20 15
@@ -226,6 +228,11 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <COMBO_WASD>;
             bindings = <&tog WASD>;
+        };
+        combo_raw_colemak{
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <COMBO_RAW_COLEMAK>;
+            bindings = <&tog RAW_COLEMAK>;
         };
 
         combo_anki_l{
@@ -485,5 +492,21 @@
                                                     &none           &none              &none       &none
             >;
         };
+
+    // raw_colemak_layer
+        // |    Q    |    W    |    F    |    P    |    B    |        |    J    |    L    |    U    |    Y    |    ;    |
+        // |    A    |    R    |    S    |    T    |    G    |        |    M    |    N    |    E    |    I    |    O    |
+        // |    Z    |    X    |    C    |    D    |    V    |        |    K    |    H    |    ,    |    .    |    /    |
+        //                               |   SYM   |   SPC   |        |  ENTER  |   NUM   |
+
+        raw_colemak_layer {
+            bindings = <
+            &kp Q       &kp W       &kp F           &kp P           &kp B              &kp J       &kp L           &kp U           &kp Y             &kp SEMI
+            &kp A       &kp R       &kp S           &kp T           &kp G              &kp M       &kp N           &kp E           &kp I             &kp O
+            &kp Z       &kp X       &kp C           &kp D           &kp V              &kp K       &kp H           &kp COMMA       &kp DOT           &kp SLASH
+                                                    &none           &kp SPC            &kp ENTER   &none
+            >;
+        };
+
 	};
 };
