@@ -417,14 +417,14 @@
 
     // control_layer
         // Everything is gui modified
-        // |         |    4    |         |         |         |        |    ←   |     ↓    |    ↑   |    →    |    ←    | // mouse
+        // |         |    4    |    5    |    6    |         |        |    ←   |     ↓    |    ↑   |    →    |    ←    | // mouse
         // |    0    |    1    |    2    |    3    |         |        |    ←   |     ↓    |    ↑   |    →    |    ←    | // gui
-        // |         |         |         |         |         |        |    ←   |     ↓    |    ↑   |    →    |    ←    | // wheel
+        // |         |    7    |    8    |    9    |         |        |    ←   |     ↓    |    ↑   |    →    |    ←    | // wheel
         //                               |  SHIFT  |  lCtrl  |        |  COMBO  |   COMBO  |
 
         control_layer {
             bindings = <
-            &none           &kp LG(NUM_4)   &trans              &trans              &trans                      U_MS_L            U_MS_D                U_MS_U          U_MS_R          U_MS_L
+            &none           &kp LG(NUM_4)   &kp LG(NUM_5)       &kp LG(NUM_6)       &trans                      U_MS_L            U_MS_D                U_MS_U          U_MS_R          U_MS_L
             &kp LG(NUM_0)   &kp LG(NUM_1)   &kp LG(NUM_2)       &kp LG(NUM_3)       &macro_change_screen        &kp LG(LEFT)      &kp LG(DOWN)          &kp LG(UP)      &kp LG(RIGHT)   &kp LG(LEFT)
             &none           &kp LG(NUM_7)   &kp LG(NUM_8)       &kp LG(NUM_9)       &trans                      U_WH_L            U_WH_D                U_WH_U          U_WH_R          U_WH_L
                                                                 &kp LCTRL           &kp LSHIFT                  &trans            &trans
